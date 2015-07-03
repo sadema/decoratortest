@@ -12,7 +12,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import javax.enterprise.inject.Default;
+import javax.enterprise.inject.spi.BeanManager;
 import javax.inject.Inject;
+
+import java.util.logging.Logger;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
@@ -35,12 +38,25 @@ public class AfdrachtServiceTest {
     }
 
     @Inject
+    private BeanManager beanManager;
+
+    @Inject
+    private Logger log;
+    
+    @Inject
     @Voes
     private AfdrachtService voesAfdrachtService;
 
     @Inject
     @EUMember
     private AfdrachtService euMemberAfdrachtService;
+
+    @Test
+    public void testCDIBootstrap() throws Exception {
+        log.info("Start testCDIBootstrap");
+        assertNotNull("beanManager not injected", beanManager);
+        assertFalse("no beans from BeanManager class", beanManager.getBeans(BeanManager.class).isEmpty());
+    }
 
     @Test
     public void doPaymentForVoesTest() throws Exception {
