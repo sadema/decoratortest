@@ -1,6 +1,7 @@
 package nl.kristalsoftware.bd.main;
 
 import nl.kristalsoftware.bd.annotations.EUMember;
+import nl.kristalsoftware.bd.annotations.Voes;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.Archive;
@@ -33,7 +34,7 @@ public class AfdrachtServiceTest {
     }
 
     @Inject
-    @Default
+    @Voes
     private AfdrachtService voesAfdrachtService;
 
     @Inject
