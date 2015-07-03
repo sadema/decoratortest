@@ -13,7 +13,8 @@ public class RetentionServiceImpl implements RetentionService {
 
     @Override
     public Integer berekenRetention(Integer bedrag) {
-        log.info("RetentionServiceImpl#berekenRetention");
-        return bedrag * 30 / 100;
+        Integer retentionBedrag = bedrag * 30 / 100;
+        log.info("RetentionServiceImpl#berekenRetention " + retentionBedrag);
+        return retentionBedrag;
     }
 }

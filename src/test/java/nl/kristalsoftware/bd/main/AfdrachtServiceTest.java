@@ -42,7 +42,7 @@ public class AfdrachtServiceTest {
 
     @Inject
     private Logger log;
-    
+
     @Inject
     @Voes
     private AfdrachtService voesAfdrachtService;

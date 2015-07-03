@@ -16,11 +16,11 @@ public class EUMemeberAfdrachtServiceImpl implements AfdrachtService {
     private Logger log;
 
     public EUMemeberAfdrachtServiceImpl() {
-        log.info("EUMemberAfdrachtServiceImpl");
     }
 
     @Override
     public Integer getBetalingsVerplichting(Integer bedrag) {
+        log.info("EUMember betalingsverplichting: " + bedrag);
         return bedrag;
     }
 }

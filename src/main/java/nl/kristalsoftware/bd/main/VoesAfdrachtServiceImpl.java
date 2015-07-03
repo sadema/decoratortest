@@ -14,12 +14,11 @@ public class VoesAfdrachtServiceImpl implements AfdrachtService {
     @Inject
     private Logger log;
 
-    public VoesAfdrachtServiceImpl() {
-        log.info("VoesAfdrachtServiceImpl");
-    }
+    public VoesAfdrachtServiceImpl() {}
 
     @Override
     public Integer getBetalingsVerplichting(Integer bedrag) {
+        log.info("Voes betalingsverplichting: " + bedrag);
         return bedrag;
     }
 }
