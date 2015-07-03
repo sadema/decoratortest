@@ -25,6 +25,7 @@ public class AfdrachtServiceTest {
     @Deployment
     public static Archive<?> createTestArchive() {
         return ShrinkWrap.create(JavaArchive.class)
+                .addClass(LogProducer.class)
                 .addClass(VoesAfdrachtServiceImpl.class)
                 .addClass(AfdrachtServiceDecorator.class)
                 .addClass(RetentionServiceImpl.class)
